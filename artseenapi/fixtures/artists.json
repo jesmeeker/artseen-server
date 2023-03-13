@@ -1,0 +1,146 @@
+[
+    {
+        "model": "artseenapi.artist",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "phone_number": 6150001111,
+            "bio": "Emily Nelson is a Nashville-based artist known for her vibrant, abstract paintings inspired by nature. With a degree in fine arts, she has exhibited her work in galleries across the Southeastern United States and has won several awards for her unique style.",
+            "website": "http://emilynelson.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U043CU3TMA7-68a4d5d18376-512",
+            "city": 2
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "phone_number": 2128675309,
+            "bio": "Jes Meeker is a ceramic artist based in NYC who creates playful and colorful sculptures that blur the line between fine art and pop culture. Her work has been featured in exhibitions and galleries throughout the city, and she has gained a strong following on social media for her unique style and approach to ceramics.",
+            "website": "http://jesmeeker.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03UPM9PHEZ-4df6f16c0550-512",
+            "city": 3
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "phone_number": 7146665656,
+            "bio": "Nick Valdez is a Los Angeles-based photographer who specializes in capturing vibrant and intimate portraits of people and urban landscapes. With a background in documentary photography, he has exhibited his work in galleries across the United States and has worked with clients ranging from musicians and fashion brands to editorial publications.",
+            "website": "http://nickv.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U0402BJNZ8Q-7dc4a1ade1c4-512",
+            "city": 1
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "phone_number": 2064576598,
+            "bio": "Lo is a Seattle-based natural mediums artist who creates dreamy and mystical works using a variety of materials and techniques such as watercolor, ink, and collage. Inspired by nature and spirituality, her art evokes a sense of mystery and wonder, and she has exhibited her work in galleries throughout the Pacific Northwest.",
+            "website": "http://lo.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03USHAEMM1-a378d930fa59-512",
+            "city": 4
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "phone_number": 7143564644,
+            "bio": "Maeghan Phan is a Los Angeles-based painter who specializes in creating vivid and expressive portraits of animals. With a background in illustration, she has developed a unique style that captures the personality and spirit of her subjects. Her work has been featured in exhibitions and galleries across the United States, and she has a strong following on social media for her animal portraits.",
+            "website": "http://maegancreates.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03UL2LP23G-2977701ddcdc-512",
+            "city": 1
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "phone_number": 2126782258,
+            "bio": "Wil I Am is a New York City-based artist who uses the flowers he grows to create vibrant and expressive canvas works. With a passion for gardening and a background in fine arts, he has developed a unique technique that combines painting and floral arrangement. His work has been exhibited in galleries across the United States and has gained a following for its intricate beauty and botanical themes.",
+            "website": "http://wilIam.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03USLKUU6N-b30f9b1b8594-512",
+            "city": 3
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 7,
+        "fields": {
+            "user": 7,
+            "phone_number": 6156784275,
+            "bio": "Jordan Perkins is a Nashville-based textile artist known for her intricate and colorful weavings that explore themes of texture and pattern. With a background in fine arts, she has developed a unique style that incorporates a range of materials and techniques, and her work has been exhibited in galleries and art fairs throughout the Southeastern United States.",
+            "website": "https://jordonstextiles.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03USLKUU6N-b30f9b1b8594-512",
+            "city": 2
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 8,
+        "fields": {
+            "user": 8,
+            "phone_number": 2063487957,
+            "bio": "",
+            "website": "http://vanessapaints.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03UC3U0N95-7d504aeed6f8-512",
+            "city": 4
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 9,
+        "fields": {
+            "user": 9,
+            "phone_number": 2064871123,
+            "bio": "Vanessa Spear is a Seattle-based artist who creates vibrant and emotive paintings that blend abstract and figurative elements. With a background in graphic design, she has developed a unique style that is characterized by bold colors, dynamic compositions, and expressive brushwork. Her work has been exhibited in galleries and art fairs throughout the Pacific Northwest, and she has gained a following for her powerful and thought-provoking pieces.",
+            "website": "http://darealkotalambert.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U01QCNNDKAB-67101e0cdcbf-512",
+            "city": 4
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 10,
+        "fields": {
+            "user": 10,
+            "phone_number": 2123464548,
+            "bio": "James Linkous is a New York City-based artist who specializes in figure drawing. With a focus on capturing the human form, he creates powerful and expressive works that explore themes of identity and emotion. His work has been exhibited in galleries and art fairs throughout the city, and he has gained a following for his skillful draftsmanship and nuanced approach to portraiture.",
+            "website": "http://jameslinkous.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U0400708ZM4-ac23cea32a8c-512",
+            "city": 3
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 11,
+        "fields": {
+            "user": 11,
+            "phone_number": 6152221313,
+            "bio": "Sydney Dickson is a Nashville-based artist who creates striking and evocative drawings using charcoal. With a focus on exploring the beauty and complexity of the human form, she has developed a unique style that is characterized by rich tonal values and expressive mark-making. Her work has been exhibited in galleries and art fairs throughout the Southeastern United States, and she has gained a following for her skillful handling of the medium and her ability to capture the essence of her subjects.",
+            "website": "http://sydneydraws.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U034T7VC2LC-daadd44cb86a-512",
+            "city": 2
+        }
+    },
+    {
+        "model": "artseenapi.artist",
+        "pk": 12,
+        "fields": {
+            "user": 12,
+            "phone_number": 7148974545,
+            "bio": "Kimber Burton is a Los Angeles-based sculptor who creates dynamic and thought-provoking works using a variety of materials, including metal, stone, and wood. With a background in architecture, she has developed a unique style that is characterized by intricate geometric forms and a focus on the interplay between light and shadow. Her work has been exhibited in galleries and art fairs throughout the United States, and she has gained a following for her innovative approach to sculpture.",
+            "website": "http://kimberb.com",
+            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03USHA2YV9-a97f68078431-512",
+            "city": 1
+        }
+    }
+]
