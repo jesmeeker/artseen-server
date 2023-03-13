@@ -319,7 +319,7 @@
     },
     {
         "model": "artseenapi.artsubrelationship",
-        "pk": 39,
+        "pk": 41,
         "fields": {
             "arttype": 5,
             "subtype": 25
@@ -327,7 +327,7 @@
     },
     {
         "model": "artseenapi.artsubrelationship",
-        "pk": 39,
+        "pk": 42,
         "fields": {
             "arttype": 3,
             "subtype": 26
@@ -335,7 +335,7 @@
     },
     {
         "model": "artseenapi.artsubrelationship",
-        "pk": 39,
+        "pk": 43,
         "fields": {
             "arttype": 5,
             "subtype": 27
@@ -343,7 +343,7 @@
     },
     {
         "model": "artseenapi.artsubrelationship",
-        "pk": 40,
+        "pk": 44,
         "fields": {
             "arttype": 5,
             "subtype": 28
