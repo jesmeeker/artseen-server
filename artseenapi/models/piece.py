@@ -5,7 +5,7 @@ class Piece(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=500)
     arttype = models.ForeignKey("ArtType", on_delete=models.SET_NULL, related_name='arttype_pieces')
-    subtype = models.ForeignKey("SubType", on_delete=models.SET_NULL, related_name='subtype_pieces')
+    subtype = models.ManyToManyField("SubTypes", through="piecesubtypes", related_name='pieces_with_subtype', related_name='subtype_pieces')
     media = models.ForeignKey("Media", on_delete=models.SET_NULL, related_name='pieces_using_this_media')
     length = models.IntegerField(max_length=3)
     width = models.IntegerField(max_length=3)
