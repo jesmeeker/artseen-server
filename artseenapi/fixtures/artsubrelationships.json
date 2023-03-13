@@ -1,0 +1,352 @@
+[
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 1,
+        "fields": {
+            "arttype": 1,
+            "subtype": 1
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 2,
+        "fields": {
+            "arttype": 1,
+            "subtype": 2
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 3,
+        "fields": {
+            "arttype": 1,
+            "subtype": 3
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 4,
+        "fields": {
+            "arttype": 1,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 5,
+        "fields": {
+            "arttype": 1,
+            "subtype": 5
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 6,
+        "fields": {
+            "arttype": 1,
+            "subtype": 6
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 7,
+        "fields": {
+            "arttype": 1,
+            "subtype": 7
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 8,
+        "fields": {
+            "arttype": 1,
+            "subtype": 8
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 9,
+        "fields": {
+            "arttype": 1,
+            "subtype": 9
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 10,
+        "fields": {
+            "arttype": 1,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 11,
+        "fields": {
+            "arttype": 2,
+            "subtype": 1
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 12,
+        "fields": {
+            "arttype": 2,
+            "subtype": 2
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 13,
+        "fields": {
+            "arttype": 2,
+            "subtype": 3
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 14,
+        "fields": {
+            "arttype": 2,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 15,
+        "fields": {
+            "arttype": 2,
+            "subtype": 5
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 16,
+        "fields": {
+            "arttype": 2,
+            "subtype": 6
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 17,
+        "fields": {
+            "arttype": 2,
+            "subtype": 7
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 18,
+        "fields": {
+            "arttype": 2,
+            "subtype": 8
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 19,
+        "fields": {
+            "arttype": 2,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 20,
+        "fields": {
+            "arttype": 2,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 21,
+        "fields": {
+            "arttype": 2,
+            "subtype": 11
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 22,
+        "fields": {
+            "arttype": 2,
+            "subtype": 12
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 23,
+        "fields": {
+            "arttype": 2,
+            "subtype": 14
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 24,
+        "fields": {
+            "arttype": 2,
+            "subtype": 13
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 25,
+        "fields": {
+            "arttype": 3,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 26,
+        "fields": {
+            "arttype": 3,
+            "subtype": 17
+        }
+    },{
+        "model": "artseenapi.artsubrelationship",
+        "pk": 27,
+        "fields": {
+            "arttype": 3,
+            "subtype": 18
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 28,
+        "fields": {
+            "arttype": 3,
+            "subtype": 19
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 29,
+        "fields": {
+            "arttype": 3,
+            "subtype": 20
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 30,
+        "fields": {
+            "arttype": 3,
+            "subtype": 21
+        }
+    },{
+        "model": "artseenapi.artsubrelationship",
+        "pk": 31,
+        "fields": {
+            "arttype": 4,
+            "subtype": 1
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 32,
+        "fields": {
+            "arttype": 4,
+            "subtype": 2
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 33,
+        "fields": {
+            "arttype": 4,
+            "subtype": 3
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 34,
+        "fields": {
+            "arttype": 4,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 35,
+        "fields": {
+            "arttype": 4,
+            "subtype": 13
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 36,
+        "fields": {
+            "arttype": 4,
+            "subtype": 14
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 37,
+        "fields": {
+            "arttype": 4,
+            "subtype": 15
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 38,
+        "fields": {
+            "arttype": 5,
+            "subtype": 22
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 39,
+        "fields": {
+            "arttype": 5,
+            "subtype": 23
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 40,
+        "fields": {
+            "arttype": 5,
+            "subtype": 24
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 39,
+        "fields": {
+            "arttype": 5,
+            "subtype": 25
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 39,
+        "fields": {
+            "arttype": 3,
+            "subtype": 26
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 39,
+        "fields": {
+            "arttype": 5,
+            "subtype": 27
+        }
+    },
+    {
+        "model": "artseenapi.artsubrelationship",
+        "pk": 40,
+        "fields": {
+            "arttype": 5,
+            "subtype": 28
+        }
+    }
+]

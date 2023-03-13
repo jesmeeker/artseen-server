@@ -1,0 +1,202 @@
+[
+    {
+        "model": "artseenapi.surface",
+        "pk": 1,
+        "fields": {
+            "label": "Stretched canvas",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 2,
+        "fields": {
+            "label": "Metal",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 3,
+        "fields": {
+            "label": "Wood",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 4,
+        "fields": {
+            "label": "Masonite",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 5,
+        "fields": {
+            "label": "Glass",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 6,
+        "fields": {
+            "label": "Paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 7,
+        "fields": {
+            "label": "Plaster",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 8,
+        "fields": {
+            "label": "Canvasboard",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 9,
+        "fields": {
+            "label": "Fabric",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 10,
+        "fields": {
+            "label": "Plastic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 11,
+        "fields": {
+            "label": "Vinyl",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 12,
+        "fields": {
+            "label": "Wall",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 13,
+        "fields": {
+            "label": "Cardboard",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 14,
+        "fields": {
+            "label": "Bristol board",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 15,
+        "fields": {
+            "label": "Illustration board",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 16,
+        "fields": {
+            "label": "Stone",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 17,
+        "fields": {
+            "label": "Stone",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 18,
+        "fields": {
+            "label": "Acrylic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 19,
+        "fields": {
+            "label": "Acrylic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 20,
+        "fields": {
+            "label": "Glossy photo paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 21,
+        "fields": {
+            "label": "Matte photo paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 22,
+        "fields": {
+            "label": "Lustre photo paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 23,
+        "fields": {
+            "label": "Metallic photo paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 24,
+        "fields": {
+            "label": "Fine art photo paper",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.surface",
+        "pk": 25,
+        "fields": {
+            "label": "Canvas photo paper",
+            "artist": null
+        }
+    }
+]

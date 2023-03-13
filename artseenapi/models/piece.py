@@ -7,6 +7,7 @@ class Piece(models.Model):
     arttype = models.ForeignKey("ArtType", on_delete=models.SET_NULL, related_name='arttype_pieces')
     subtype = models.ManyToManyField("SubTypes", through="piecesubtypes", related_name='subtype_pieces')
     media = models.ForeignKey("Media", on_delete=models.SET_NULL, related_name='pieces_using_this_media')
+    surface = models.ForeignKey("Surface", on_delete=models.SET_NULL, related_name='pieces_using_this_surface')
     length = models.IntegerField(max_length=3)
     width = models.IntegerField(max_length=3)
     height = models.IntegerField(max_length=3)
