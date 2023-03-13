@@ -1,0 +1,154 @@
+[
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 1,
+        "fields": {
+            "piece": 1,
+            "subtype": 2
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 2,
+        "fields": {
+            "piece": 1,
+            "subtype": 6
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 3,
+        "fields": {
+            "piece": 2,
+            "subtype": 1
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 4,
+        "fields": {
+            "piece": 3,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 5,
+        "fields": {
+            "piece": 3,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 6,
+        "fields": {
+            "piece": 8,
+            "subtype": 2
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 7,
+        "fields": {
+            "piece": 8,
+            "subtype": 5
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 8,
+        "fields": {
+            "piece": 11,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 9,
+        "fields": {
+            "piece": 11,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 10,
+        "fields": {
+            "piece": 11,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 11,
+        "fields": {
+            "piece": 17,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 12,
+        "fields": {
+            "piece": 17,
+            "subtype": 10
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 13,
+        "fields": {
+            "piece": 17,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 14,
+        "fields": {
+            "piece": 22,
+            "subtype": 1
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 15,
+        "fields": {
+            "piece": 23,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 16,
+        "fields": {
+            "piece": 23,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 17,
+        "fields": {
+            "piece": 24,
+            "subtype": 16
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 18,
+        "fields": {
+            "piece": 27,
+            "subtype": 4
+        }
+    },
+    {
+        "model": "artseenapi.piecesubtype",
+        "pk": 19,
+        "fields": {
+            "piece": 28,
+            "subtype": 16
+        }
+    }
+]
