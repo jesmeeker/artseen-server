@@ -350,7 +350,7 @@
         }
     },
     {
-        "model": "piece.piece",
+        "model": "artseenapi.piece",
         "pk": 15,
         "fields": {
             "artist": 10,
@@ -375,7 +375,7 @@
         }
     },
     {
-        "model": "piece.piece",
+        "model": "artseenapi.piece",
         "pk": 16,
         "fields": {
             "artist": 6,
