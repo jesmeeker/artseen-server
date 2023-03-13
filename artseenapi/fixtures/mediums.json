@@ -1,0 +1,386 @@
+[
+    {
+        "model": "artseenapi.media",
+        "pk": 1,
+        "fields": {
+            "label": "Oil",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 2,
+        "fields": {
+            "label": "Acrylic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 3,
+        "fields": {
+            "label": "Watercolor",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 4,
+        "fields": {
+            "label": "Encaustic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 5,
+        "fields": {
+            "label": "Ink",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 6,
+        "fields": {
+            "label": "Charcoal",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 7,
+        "fields": {
+            "label": "Oil pastels",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 8,
+        "fields": {
+            "label": "Chalk pastels",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 9,
+        "fields": {
+            "label": "Colored pencils",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 10,
+        "fields": {
+            "label": "Graphite pencils",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 11,
+        "fields": {
+            "label": "Marker pens",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 12,
+        "fields": {
+            "label": "Chalk",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 13,
+        "fields": {
+            "label": "Gold leaf",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 14,
+        "fields": {
+            "label": "Conte crayons",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 15,
+        "fields": {
+            "label": "Silverpoint",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 16,
+        "fields": {
+            "label": "Ballpoint pen",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 17,
+        "fields": {
+            "label": "Watercolor pencil",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 18,
+        "fields": {
+            "label": "Calligraphy pen",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 19,
+        "fields": {
+            "label": "Sepia",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 20,
+        "fields": {
+            "label": "Clay",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 21,
+        "fields": {
+            "label": "Ceramic",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 22,
+        "fields": {
+            "label": "Wood",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 23,
+        "fields": {
+            "label": "Metal",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 24,
+        "fields": {
+            "label": "Stone",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 25,
+        "fields": {
+            "label": "Glass",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 26,
+        "fields": {
+            "label": "Plaster",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 27,
+        "fields": {
+            "label": "Resin",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 28,
+        "fields": {
+            "label": "Fabric",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 29,
+        "fields": {
+            "label": "Paper mache",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 30,
+        "fields": {
+            "label": "Recycled materials",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 31,
+        "fields": {
+            "label": "Sand",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 32,
+        "fields": {
+            "label": "Food",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 33,
+        "fields": {
+            "label": "Cement",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 34,
+        "fields": {
+            "label": "Foam",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 35,
+        "fields": {
+            "label": "Wire",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 36,
+        "fields": {
+            "label": "Food",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 37,
+        "fields": {
+            "label": "Felt",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 38,
+        "fields": {
+            "label": "Yarn",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 39,
+        "fields": {
+            "label": "Thread",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 40,
+        "fields": {
+            "label": "Bead",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 41,
+        "fields": {
+            "label": "Sequins",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 42,
+        "fields": {
+            "label": "Lace",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 43,
+        "fields": {
+            "label": "Leather",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 44,
+        "fields": {
+            "label": "Natural materials",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 45,
+        "fields": {
+            "label": "Glaze",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 46,
+        "fields": {
+            "label": "Overglaze",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 47,
+        "fields": {
+            "label": "Engobe",
+            "artist": null
+        }
+    },
+    {
+        "model": "artseenapi.media",
+        "pk": 48,
+        "fields": {
+            "label": "Wax",
+            "artist": null
+        }
+    }
+]

@@ -1,0 +1,198 @@
+[
+    {
+        "model": "artseenapi.subtype",
+        "pk": 1,
+        "fields": {
+            "label": "Portrait"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 2,
+        "fields": {
+            "label": "Landscape"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 3,
+        "fields": {
+            "label": "Still life"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 4,
+        "fields": {
+            "label": "Abstract"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 5,
+        "fields": {
+            "label": "Realism"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 6,
+        "fields": {
+            "label": "Impressionism"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 7,
+        "fields": {
+            "label": "Expressionism"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 8,
+        "fields": {
+            "label": "Surrealism"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 9,
+        "fields": {
+            "label": "Pop art"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 10,
+        "fields": {
+            "label": "Contemporary"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 11,
+        "fields": {
+            "label": "Figure drawing"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 12,
+        "fields": {
+            "label": "Illustration"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 13,
+        "fields": {
+            "label": "Wildlife"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 14,
+        "fields": {
+            "label": "Fashion"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 15,
+        "fields": {
+            "label": "Architectural"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 16,
+        "fields": {
+            "label": "Sculpture"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 17,
+        "fields": {
+            "label": "Installation"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 18,
+        "fields": {
+            "label": "Assemblage"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 19,
+        "fields": {
+            "label": "Pottery"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 20,
+        "fields": {
+            "label": "Glass blowing"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 21,
+        "fields": {
+            "label": "Stained glass"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 22,
+        "fields": {
+            "label": "Knitting/crochet"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 23,
+        "fields": {
+            "label": "Embroidery"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 24,
+        "fields": {
+            "label": "Weaving"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 25,
+        "fields": {
+            "label": "Quilting"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 26,
+        "fields": {
+            "label": "Macramé"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 27,
+        "fields": {
+            "label": "Felting"
+        }
+    },
+    {
+        "model": "artseenapi.subtype",
+        "pk": 28,
+        "fields": {
+            "label": "Shibori"
+        }
+    }
+]
