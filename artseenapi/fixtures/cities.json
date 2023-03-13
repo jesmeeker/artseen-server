@@ -1,0 +1,30 @@
+[
+    {
+        "model": "artseenapi.city",
+        "pk": 1,
+        "fields": {
+            "label": "Los Angeles"
+        }
+    },
+    {
+        "model": "artseenapi.city",
+        "pk": 2,
+        "fields": {
+            "label": "Nashville"
+        }
+    },
+    {
+        "model": "artseenapi.city",
+        "pk": 3,
+        "fields": {
+            "label": "New York City"
+        }
+    },
+    {
+        "model": "artseenapi.city",
+        "pk": 4,
+        "fields": {
+            "label": "Seattle"
+        }
+    }
+]
