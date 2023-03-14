@@ -44,12 +44,6 @@ class CityView(ViewSet):
         # Constructs response and returns data requested by the client in the response body as an array of JSON stringified objects
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    def destroy(self, request, pk):
-        city = City.objects.get(pk=pk)
-        city.delete()
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-
 class CitySerializer(serializers.ModelSerializer):
     """JSON serializer for game types"""
     # Converts meta data requested to JSON stringified object using City as model
