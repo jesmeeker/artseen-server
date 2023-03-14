@@ -53,14 +53,15 @@ def register_user(request):
         first_name=request.data['first_name'],
         last_name=request.data['last_name']
     )
-    city = City.objects.get(request.data['city_id'])
+
+    city = City.objects.get(pk=request.data['city_id'])
 
     artist = Artist.objects.create(
         bio=request.data['bio'],
-        image_url=request.data['profile_image_url'],
+        image_url=request.data['image_url'],
         user=new_user,
         city=city,
-        phone=request.data['phone'],
+        phone_number=request.data['phone'],
         website=request.data['website']
     )
 
