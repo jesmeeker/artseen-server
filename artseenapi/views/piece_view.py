@@ -41,9 +41,6 @@ class PieceView(ViewSet):
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
 
-        elif Piece.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
         else:
             pieces = Piece.objects.all()
 
