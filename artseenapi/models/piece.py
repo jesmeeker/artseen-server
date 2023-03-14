@@ -18,6 +18,6 @@ class Piece(models.Model):
     available_show = models.BooleanField(default=False)
     will_ship = models.BooleanField(default=False)
     unique = models.BooleanField(default=True)
-    quantity_available = models.IntegerField()
-    price = models.FloatField()
+    quantity_available = models.IntegerField(null=True)
+    price = models.FloatField(null=True)
     date_added = models.DateField(null=True, blank=True, auto_now=False, auto_now_add=True)
