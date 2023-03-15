@@ -20,7 +20,7 @@ class PieceView(ViewSet):
         Returns:
             Response -- JSON serialized events
         """
-        try: 
+        try:
             piece = Piece.objects.get(pk=pk)
 
         except Piece.DoesNotExist:
@@ -35,7 +35,14 @@ class PieceView(ViewSet):
         Returns:
             Response -- JSON serialized list of pieces
         """
-        pieces = Piece.objects.all()
+        pieces = []
+        artist = Artist.objects.get(user=request.auth.user)
+
+        if "user" in request.query_params:
+            pieces = Piece.objects.filter(artist_id=artist)
+
+        else:
+            pieces = Piece.objects.all()
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -55,17 +62,17 @@ class PieceView(ViewSet):
             arttype = ArtType.objects.get(pk=request.data['arttype'])
         except ArtType.DoesNotExist:
             return Response({'message': 'You sent an invalid arttype Id'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         try:
             media = Media.objects.get(pk=request.data['media'])
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         try:
             surface = Surface.objects.get(pk=request.data['surface'])
         except Surface.DoesNotExist:
             return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-                
+
         piece = Piece.objects.create(
             artist=artist,
             title=request.data['title'],
@@ -108,17 +115,17 @@ class PieceView(ViewSet):
             arttype = ArtType.objects.get(pk=request.data['arttype'])
         except ArtType.DoesNotExist:
             return Response({'message': 'You sent an invalid arttype Id'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         try:
             media = Media.objects.get(pk=request.data['media'])
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         try:
             surface = Surface.objects.get(pk=request.data['surface'])
         except Surface.DoesNotExist:
             return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-        
+
         piece_to_update = Piece.objects.get(pk=pk)
         piece_to_update.title = request.data['title']
         piece_to_update.subtitle = request.data['subtitle']
@@ -141,7 +148,8 @@ class PieceView(ViewSet):
 
         subtypes_selected = request.data['subtypes']
 
-        current_subtype_relationships = PieceSubType.objects.filter(piece__id=pk)
+        current_subtype_relationships = PieceSubType.objects.filter(
+            piece__id=pk)
         current_subtype_relationships.delete()
 
         for subtype in subtypes_selected:
@@ -176,12 +184,14 @@ class PieceArtTypeSerializer(serializers.ModelSerializer):
         model = ArtType
         fields = ('id', 'label',)
 
+
 class PieceMediaSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions
     """
     class Meta:
         model = Media
         fields = ('id', 'label',)
+
 
 class PieceSurfaceSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions
@@ -202,4 +212,4 @@ class PieceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'date_added')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added')
