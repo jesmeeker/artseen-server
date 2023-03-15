@@ -6,9 +6,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from artseenapi.models import ArtType
 
-
-@authentication_classes([])
-@permission_classes([])
 class ArtTypeView(ViewSet):
     """Rare arttype view"""
 
@@ -37,9 +34,9 @@ class ArtTypeView(ViewSet):
             Response -- JSON serialized list of cities
         """
         # Make connection with server to retrieve a query set of all cities items requested by client and assign the found instances to the cities variable
-        cities = ArtType.objects.order_by('label')
-        # passes instances stored in cities variable to the serializer class to construct data into JSON stringified objects, which it then assigns to variable serializer
-        serializer = ArtTypeSerializer(cities, many=True)
+        arttypes = ArtType.objects.order_by('label')
+        # passes instances stored in arttypes variable to the serializer class to construct data into JSON stringified objects, which it then assigns to variable serializer
+        serializer = ArtTypeSerializer(arttypes, many=True)
 
         # Constructs response and returns data requested by the client in the response body as an array of JSON stringified objects
         return Response(serializer.data, status=status.HTTP_200_OK)

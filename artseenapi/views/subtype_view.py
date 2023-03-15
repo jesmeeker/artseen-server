@@ -6,9 +6,6 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from artseenapi.models import SubType
 
-
-@authentication_classes([])
-@permission_classes([])
 class SubTypeView(ViewSet):
     """Rare subtype view"""
 
@@ -37,9 +34,9 @@ class SubTypeView(ViewSet):
             Response -- JSON serialized list of cities
         """
         # Make connection with server to retrieve a query set of all cities items requested by client and assign the found instances to the cities variable
-        cities = SubType.objects.order_by('label')
-        # passes instances stored in cities variable to the serializer class to construct data into JSON stringified objects, which it then assigns to variable serializer
-        serializer = SubTypeSerializer(cities, many=True)
+        subtypes = SubType.objects.order_by('label')
+        # passes instances stored in subtypes variable to the serializer class to construct data into JSON stringified objects, which it then assigns to variable serializer
+        serializer = SubTypeSerializer(subtypes, many=True)
 
         # Constructs response and returns data requested by the client in the response body as an array of JSON stringified objects
         return Response(serializer.data, status=status.HTTP_200_OK)
