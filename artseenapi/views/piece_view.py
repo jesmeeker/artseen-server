@@ -59,17 +59,17 @@ class PieceView(ViewSet):
             return Response({'message': 'You sent an invalid token'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            arttype = ArtType.objects.get(pk=request.data['arttype'])
+            arttype = ArtType.objects.get(pk=request.data['artTypeId'])
         except ArtType.DoesNotExist:
             return Response({'message': 'You sent an invalid arttype Id'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            media = Media.objects.get(pk=request.data['media'])
+            media = Media.objects.get(pk=request.data['mediaId'])
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            surface = Surface.objects.get(pk=request.data['surface'])
+            surface = Surface.objects.get(pk=request.data['surfaceId'])
         except Surface.DoesNotExist:
             return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -90,7 +90,7 @@ class PieceView(ViewSet):
             available_show=request.data['available_show'],
             will_ship=request.data['will_ship'],
             unique=request.data['unique'],
-            quantity_available=request.data['quantity_available'],
+            quantity_available=request.data['qty_available'],
             price=request.data['price']
         )
 

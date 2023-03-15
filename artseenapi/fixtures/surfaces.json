@@ -129,23 +129,7 @@
     },
     {
         "model": "artseenapi.surface",
-        "pk": 17,
-        "fields": {
-            "label": "Stone",
-            "artist": null
-        }
-    },
-    {
-        "model": "artseenapi.surface",
         "pk": 18,
-        "fields": {
-            "label": "Acrylic",
-            "artist": null
-        }
-    },
-    {
-        "model": "artseenapi.surface",
-        "pk": 19,
         "fields": {
             "label": "Acrylic",
             "artist": null
