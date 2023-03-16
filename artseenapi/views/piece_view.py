@@ -76,18 +76,12 @@ class PieceView(ViewSet):
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
 
-        try:
-            surface = Surface.objects.get(pk=request.data['surface'])
-        except Surface.DoesNotExist:
-            return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-
         piece = Piece.objects.create(
             artist=artist,
             title=request.data['title'],
             subtitle=request.data['subtitle'],
             arttype=arttype,
             media=media,
-            surface=surface,
             length=request.data['length'],
             width=request.data['width'],
             height=request.data['height'],
@@ -101,6 +95,17 @@ class PieceView(ViewSet):
             quantity_available=request.data['qty_available'],
             price=request.data['price']
         )
+
+        if request.data['surface'] is not None:
+            try:
+                surface = Surface.objects.get(pk=request.data['surface'])
+                piece.surface = surface
+                piece.save()
+            except Surface.DoesNotExist:
+                return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
+            
+        else:
+            pass
 
         subtypes_selected = request.data['subtypes']
 
@@ -139,7 +144,6 @@ class PieceView(ViewSet):
         piece_to_update.subtitle = request.data['subtitle']
         piece_to_update.arttype = arttype
         piece_to_update.media = media
-        piece_to_update.surface = surface
         piece_to_update.length = request.data['length']
         piece_to_update.width = request.data['width']
         piece_to_update.height = request.data['height']
@@ -152,6 +156,17 @@ class PieceView(ViewSet):
         piece_to_update.unique = request.data['unique']
         piece_to_update.quantity_available = request.data['quantity_available']
         piece_to_update.price = request.data['price']
+
+        if request.data['surface'] is not None:
+            try:
+                surface = Surface.objects.get(pk=request.data['surface'])
+                piece_to_update.surface = surface
+            except Surface.DoesNotExist:
+                return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
+            
+        else:
+            pass
+
         piece_to_update.save()
 
         subtypes_selected = request.data['subtypes']
