@@ -20,8 +20,12 @@ class PieceView(ViewSet):
         Returns:
             Response -- JSON serialized events
         """
+        artist = Artist.objects.get(user=request.auth.user)
+
         try:
             piece = Piece.objects.get(pk=pk)
+            if piece.artist == artist:
+                piece.creator = True
 
         except Piece.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
@@ -43,6 +47,10 @@ class PieceView(ViewSet):
 
         else:
             pieces = Piece.objects.all()
+
+        for piece in pieces:
+            if piece.artist == artist:
+                piece.creator = True
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -212,4 +220,4 @@ class PieceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator')
