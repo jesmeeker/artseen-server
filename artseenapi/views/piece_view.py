@@ -134,11 +134,6 @@ class PieceView(ViewSet):
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
 
-        try:
-            surface = Surface.objects.get(pk=request.data['surface'])
-        except Surface.DoesNotExist:
-            return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-
         piece_to_update = Piece.objects.get(pk=pk)
         piece_to_update.title = request.data['title']
         piece_to_update.subtitle = request.data['subtitle']
