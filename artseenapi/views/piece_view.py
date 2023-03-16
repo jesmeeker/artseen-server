@@ -59,17 +59,17 @@ class PieceView(ViewSet):
             return Response({'message': 'You sent an invalid token'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            arttype = ArtType.objects.get(pk=request.data['artTypeId'])
+            arttype = ArtType.objects.get(pk=request.data['arttype'])
         except ArtType.DoesNotExist:
             return Response({'message': 'You sent an invalid arttype Id'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            media = Media.objects.get(pk=request.data['mediaId'])
+            media = Media.objects.get(pk=request.data['media'])
         except Media.DoesNotExist:
             return Response({'message': 'You sent an invalid media Id'}, status=status.HTTP_404_NOT_FOUND)
 
         try:
-            surface = Surface.objects.get(pk=request.data['surfaceId'])
+            surface = Surface.objects.get(pk=request.data['surface'])
         except Surface.DoesNotExist:
             return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -155,7 +155,7 @@ class PieceView(ViewSet):
         for subtype in subtypes_selected:
             piece_subtype = PieceSubType()
             piece_subtype.piece = piece_to_update
-            piece_subtype.subtype = SubType.objects.get(pk=subtype)
+            piece_subtype.subtype = SubType.objects.get(pk=int(subtype))
             piece_subtype.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -212,4 +212,4 @@ class PieceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added')
