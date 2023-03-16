@@ -22,3 +22,11 @@ class Piece(models.Model):
     price = models.FloatField(null=True)
     private = models.BooleanField(default=False)
     date_added = models.DateField(null=True, blank=True, auto_now=False, auto_now_add=True)
+
+    @property
+    def creator(self):
+        return self.__creator
+
+    @creator.setter
+    def creator(self, value):
+        self.__creator = value
