@@ -49,25 +49,28 @@ class ArtistView(ViewSet):
         Returns
             Response -- JSON serialized game instance
         """
+        city_info = request.data['city']
+
         try:
-            city = City.objects.get(pk=request.data['city'])
+            city = City.objects.get(pk=city_info['id'])
         except City.DoesNotExist:
             return Response({'message': 'You sent an invalid city Id'}, status=status.HTTP_404_NOT_FOUND)
 
         artist_to_update = Artist.objects.get(pk=pk)
-        artist_to_update.phone_number = request.data['phone']
+        artist_to_update.phone_number = request.data['phone_number']
         artist_to_update.bio = request.data['bio']
         artist_to_update.website = request.data['website']
         artist_to_update.image_url = request.data['image_url']
         artist_to_update.city = city
         artist_to_update.save()
 
-        user_to_update = User.objects.get(user=request.auth.user)
-        user_to_update.first_name = request.data['first_name']
-        user_to_update.last_name = request.data['last_name']
-        user_to_update.email = request.data['email']
-        user_to_update.password = request.data['password']
-        user_to_update.username = request.data['username']
+        user_info = request.data['user']
+
+        user_to_update = User.objects.get(pk=request.auth.user_id)
+        user_to_update.first_name = user_info['first_name']
+        user_to_update.last_name = user_info['last_name']
+        user_to_update.email = user_info['email']
+        user_to_update.username = user_info['username']
         user_to_update.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
