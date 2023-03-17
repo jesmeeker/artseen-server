@@ -4,4 +4,5 @@ from .piece_view import PieceView
 from .arttype_view import ArtTypeView
 from .subtype_view import SubTypeView
 from .media_view import MediaView
+from .artist_view import ArtistView
 from .surface_view import SurfaceView
