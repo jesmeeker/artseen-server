@@ -13,3 +13,10 @@ class Artist(models.Model):
     @property
     def full_name(self):
         return f'{self.user.first_name} {self.user.last_name}'
+    
+    @property
+    def staff(self):
+        if self.user.is_staff:
+            return True
+        else:
+            return False

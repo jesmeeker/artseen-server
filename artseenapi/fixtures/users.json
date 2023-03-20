@@ -21,7 +21,7 @@
             "last_name": "Meeker",
             "email": "jmeeker@email.com",
             "username": "jmeeker",
-            "is_staff": false,
+            "is_staff": true,
             "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
             "date_joined": "2021-08-28T14:51:39.989Z",
             "is_active": true
