@@ -25,20 +25,33 @@ def login_user(request):
 
     # If authentication was successful, respond with their token
     if authenticated_user is not None:
-        staff = getattr(authenticated_user, 'is_staff')
-        if staff is True:
-            token = Token.objects.get(user=authenticated_user)
-            data = {
-                'valid': True,
-                'token': token.key
-            }
-        else:
-            token = Token.objects.get(user=authenticated_user)
-            data = {
-                'valid': True,
-                'token': token.key
-            }
+        try:
+            artist = Artist.objects.get(user=authenticated_user)
+            permissions = 'artist'
+        except Artist.DoesNotExist:
+            pass
+
+        try:
+            viewer = Viewer.objects.get(user=authenticated_user)
+            permissions = 'viewer'
+        except Viewer.DoesNotExist:
+            pass
+
+        try:
+            manager = Manager.objects.get(user=authenticated_user)
+            permissions = 'manager'
+        except Manager.DoesNotExist:
+            pass
+                
+    
+        token = Token.objects.get(user=authenticated_user)
+        data = {
+            'valid': True,
+            'token': token.key,
+            'permissions': permissions
+        }
         return Response(data)
+    
     else:
         # Bad login details were provided. So we can't log the user in.
         data = {'valid': False}
@@ -76,6 +89,7 @@ def register_user(request):
             website=request.data['website']
         )
         token = Token.objects.create(user=artist.user)
+        permissions = artist
 
     if 'viewer' in request.query_params:
         viewer = Viewer.objects.create(
@@ -84,6 +98,7 @@ def register_user(request):
             phone_number=request.data['phone']
         )
         token = Token.objects.create(user=viewer.user)
+        permissions = viewer
 
     if 'manager' in request.query_params:
         gallery = Gallery.objects.get(pk=request.data['gallery_id'])
@@ -95,6 +110,7 @@ def register_user(request):
             phone_number=request.data['phone']
         )
         token = Token.objects.create(user=manager.user)
+        permissions = manager
 
-    data = {'token': token.key}
+    data = {'token': token.key, 'permissions': permissions}
     return Response(data)
