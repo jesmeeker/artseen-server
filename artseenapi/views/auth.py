@@ -89,7 +89,7 @@ def register_user(request):
             website=request.data['website']
         )
         token = Token.objects.create(user=artist.user)
-        permissions = artist
+        permissions = 'artist'
 
     if 'viewer' in request.query_params:
         viewer = Viewer.objects.create(
@@ -98,7 +98,7 @@ def register_user(request):
             phone_number=request.data['phone']
         )
         token = Token.objects.create(user=viewer.user)
-        permissions = viewer
+        permissions = 'viewer'
 
     if 'manager' in request.query_params:
         gallery = Gallery.objects.get(pk=request.data['gallery_id'])
@@ -110,7 +110,7 @@ def register_user(request):
             phone_number=request.data['phone']
         )
         token = Token.objects.create(user=manager.user)
-        permissions = manager
+        permissions = 'manager'
 
     data = {'token': token.key, 'permissions': permissions}
     return Response(data)
