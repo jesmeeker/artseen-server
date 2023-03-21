@@ -328,7 +328,7 @@
         "model": "artseenapi.piece",
         "pk": 14,
         "fields": {
-            "artist": 11,
+            "artist": 10,
             "title": "Celestial Dreams",
             "subtitle": "A cosmic exploration",
             "arttype": 1,

@@ -118,29 +118,5 @@
             "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U0400708ZM4-ac23cea32a8c-512",
             "city": 3
         }
-    },
-    {
-        "model": "artseenapi.artist",
-        "pk": 11,
-        "fields": {
-            "user": 11,
-            "phone_number": 6152221313,
-            "bio": "Sydney Dickson is a Nashville-based artist who creates striking and evocative drawings using charcoal. With a focus on exploring the beauty and complexity of the human form, she has developed a unique style that is characterized by rich tonal values and expressive mark-making. Her work has been exhibited in galleries and art fairs throughout the Southeastern United States, and she has gained a following for her skillful handling of the medium and her ability to capture the essence of her subjects.",
-            "website": "http://sydneydraws.com",
-            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U034T7VC2LC-daadd44cb86a-512",
-            "city": 2
-        }
-    },
-    {
-        "model": "artseenapi.artist",
-        "pk": 12,
-        "fields": {
-            "user": 12,
-            "phone_number": 7148974545,
-            "bio": "Kimber Burton is a Los Angeles-based sculptor who creates dynamic and thought-provoking works using a variety of materials, including metal, stone, and wood. With a background in architecture, she has developed a unique style that is characterized by intricate geometric forms and a focus on the interplay between light and shadow. Her work has been exhibited in galleries and art fairs throughout the United States, and she has gained a following for her innovative approach to sculpture.",
-            "website": "http://kimberb.com",
-            "image_url": "https://ca.slack-edge.com/T03F2SDTJ-U03USHA2YV9-a97f68078431-512",
-            "city": 1
-        }
     }
 ]

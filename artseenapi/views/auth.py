@@ -65,11 +65,6 @@ def register_user(request):
     )
 
     city = City.objects.get(pk=request.data['city_id'])
-    
-    try:
-        gallery = Gallery.objects.get(pk=request.data['gallery_id'])
-    except Gallery.DoesNotExist:
-        gallery = None
 
     if 'artist' in request.query_params:
         artist = Artist.objects.create(
@@ -91,6 +86,8 @@ def register_user(request):
         token = Token.objects.create(user=viewer.user)
 
     if 'manager' in request.query_params:
+        gallery = Gallery.objects.get(pk=request.data['gallery_id'])
+    
         manager = Manager.objects.create(
             user=new_user,
             city=city,

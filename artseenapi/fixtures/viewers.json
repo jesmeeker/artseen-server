@@ -1,0 +1,11 @@
+[
+    {
+        "model": "artseenapi.viewer",
+        "pk": 1,
+        "fields": {
+            "user": 11,
+            "phone_number": 6152221313,
+            "city": 2
+        }
+    }
+]

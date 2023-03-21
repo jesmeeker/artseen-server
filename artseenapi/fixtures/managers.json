@@ -1,0 +1,12 @@
+[
+    {
+        "model": "artseenapi.manager",
+        "pk": 1,
+        "fields": {
+            "user": 12,
+            "phone_number": 7148974545,
+            "gallery" : 2,
+            "city": 1
+        }
+    }
+]
