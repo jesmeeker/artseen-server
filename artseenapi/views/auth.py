@@ -91,7 +91,7 @@ def register_user(request):
         token = Token.objects.create(user=artist.user)
         permissions = 'artist'
 
-    if 'viewer' in request.query_params:
+    elif 'viewer' in request.query_params:
         viewer = Viewer.objects.create(
             user=new_user,
             city=city,
@@ -100,7 +100,7 @@ def register_user(request):
         token = Token.objects.create(user=viewer.user)
         permissions = 'viewer'
 
-    if 'manager' in request.query_params:
+    elif 'manager' in request.query_params:
         gallery = Gallery.objects.get(pk=request.data['gallery_id'])
     
         manager = Manager.objects.create(
