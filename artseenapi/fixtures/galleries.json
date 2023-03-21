@@ -1,0 +1,50 @@
+[
+    {
+        "model": "artseenapi.gallery",
+        "pk": 1,
+        "fields": {
+            "name": "The Best Gallery in NYC",
+            "address": "123 Broadway N",
+            "phone": 2122223232,
+            "city": 3,
+            "square_feet": 500,
+            "rooms": 2
+        }
+    },
+    {
+        "model": "artseenapi.gallery",
+        "pk": 2,
+        "fields": {
+            "name": "Boujie LA Gallery",
+            "address": "45 Rodea Dr",
+            "phone": 2132223232,
+            "city": 1,
+            "square_feet": 500,
+            "rooms": 1
+        }
+    },
+    {
+        "model": "artseenapi.gallery",
+        "pk": 3,
+        "fields": {
+            "name": "Music City Gallery",
+            "address": "324 2nd Ave N",
+            "phone": 6153432687,
+            "city": 2,
+            "square_feet": 5000,
+            "rooms": 4
+        }
+    },
+    {
+        "model": "artseenapi.gallery",
+        "pk": 4,
+        "fields": {
+            "name": "Birshorn Art Gallery",
+            "address": "102934 52nd Ave E",
+            "phone": 3654845877,
+            "city": 4,
+            "square_feet": 10000,
+            "rooms": 3
+        }
+    }
+]

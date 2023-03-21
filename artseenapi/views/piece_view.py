@@ -40,7 +40,10 @@ class PieceView(ViewSet):
             Response -- JSON serialized list of pieces
         """
         pieces = []
-        artist = Artist.objects.get(user=request.auth.user)
+        try:
+            artist = Artist.objects.get(user=request.auth.user)
+        except Artist.DoesNotExist:
+            artist = None
 
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
@@ -49,8 +52,9 @@ class PieceView(ViewSet):
             pieces = Piece.objects.all()
 
         for piece in pieces:
-            if piece.artist == artist:
-                piece.creator = True
+            if artist is not None:
+                if piece.artist == artist:
+                    piece.creator = True
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

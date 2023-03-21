@@ -5,6 +5,7 @@ python3 manage.py makemigrations artseenapi
 python3 manage.py migrate artseenapi
 python3 manage.py loaddata users
 python3 manage.py loaddata cities
+python3 manage.py loaddata galleries
 python3 manage.py loaddata artists
 python3 manage.py loaddata tokens
 python3 manage.py loaddata arttypes

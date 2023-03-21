@@ -7,3 +7,6 @@ from .surface import Surface
 from .piece import Piece
 from .piecessubtype import PieceSubType
 from .subtype import SubType
+from .gallery import Gallery
+from .manager import Manager
+from .viewer import Viewer

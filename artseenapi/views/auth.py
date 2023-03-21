@@ -5,7 +5,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
-from artseenapi.models import Artist, City
+from artseenapi.models import Artist, City, Manager, Gallery, Viewer
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -28,21 +29,21 @@ def login_user(request):
         if staff is True:
             token = Token.objects.get(user=authenticated_user)
             data = {
-                    'valid': True,
-                    'token': token.key,
-                    'staff': True
-                }
+                'valid': True,
+                'token': token.key
+            }
         else:
             token = Token.objects.get(user=authenticated_user)
             data = {
-                    'valid': True,
-                    'token': token.key
-                }
+                'valid': True,
+                'token': token.key
+            }
         return Response(data)
     else:
         # Bad login details were provided. So we can't log the user in.
-        data = { 'valid': False }
+        data = {'valid': False}
         return Response(data)
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -64,18 +65,39 @@ def register_user(request):
     )
 
     city = City.objects.get(pk=request.data['city_id'])
+    
+    try:
+        gallery = Gallery.objects.get(pk=request.data['gallery_id'])
+    except Gallery.DoesNotExist:
+        gallery = None
 
-    artist = Artist.objects.create(
-        bio=request.data['bio'],
-        image_url=request.data['image_url'],
-        user=new_user,
-        city=city,
-        phone_number=request.data['phone'],
-        website=request.data['website']
-    )
+    if 'artist' in request.query_params:
+        artist = Artist.objects.create(
+            bio=request.data['bio'],
+            image_url=request.data['image_url'],
+            user=new_user,
+            city=city,
+            phone_number=request.data['phone'],
+            website=request.data['website']
+        )
+        token = Token.objects.create(user=artist.user)
 
-    # Use the REST Framework's token generator on the new user account
-    token = Token.objects.create(user=artist.user)
-    # Return the token to the client
-    data = { 'token': token.key }
+    if 'viewer' in request.query_params:
+        viewer = Viewer.objects.create(
+            user=new_user,
+            city=city,
+            phone_number=request.data['phone']
+        )
+        token = Token.objects.create(user=viewer.user)
+
+    if 'manager' in request.query_params:
+        manager = Manager.objects.create(
+            user=new_user,
+            city=city,
+            gallery=gallery,
+            phone_number=request.data['phone']
+        )
+        token = Token.objects.create(user=manager.user)
+
+    data = {'token': token.key}
     return Response(data)

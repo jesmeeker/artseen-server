@@ -17,17 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from artseenapi.views import login_user, register_user, CityView, SurfaceView, MediaView, PieceView, ArtTypeView, SubTypeView, ArtistView
+from artseenapi.views import login_user, register_user, CityView, GalleryView, SurfaceView, MediaView, PieceView, ArtTypeView, SubTypeView, ArtistView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'cities', CityView, 'city')
+router.register(r'galleries', GalleryView, 'city')
 router.register(r'arttypes', ArtTypeView, 'arttype')
 router.register(r'mediums', MediaView, 'media')
 router.register(r'surfaces', SurfaceView, 'surface')
 router.register(r'subtypes', SubTypeView, 'subtype')
 router.register(r'art', PieceView, 'piece')
 router.register(r'artist', ArtistView, 'artist')
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),

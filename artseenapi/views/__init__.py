@@ -6,3 +6,4 @@ from .subtype_view import SubTypeView
 from .media_view import MediaView
 from .artist_view import ArtistView
 from .surface_view import SurfaceView
+from .gallery_view import GalleryView
