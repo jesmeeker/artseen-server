@@ -24,11 +24,14 @@ class PieceView(ViewSet):
             Response -- JSON serialized events
         """
         artist = Artist.objects.get(user=request.auth.user)
-        likes = PieceLikes.objects.filter(Q(user=request.auth.user) & Q(piece_id=pk))
-        favorites = PieceFavorites.objects.filter(Q(user=request.auth.user) & Q(piece_id=pk))
+        likes = PieceLikes.objects.filter(
+            Q(user=request.auth.user) & Q(piece_id=pk))
+        favorites = PieceFavorites.objects.filter(
+            Q(user=request.auth.user) & Q(piece_id=pk))
 
         try:
-            piece = Piece.objects.get(pk=pk)
+            piece = Piece.objects.annotate(
+                likes_count=Count('likes')).get(pk=pk)
             if piece.artist == artist:
                 piece.creator = True
 
@@ -233,7 +236,7 @@ class PieceView(ViewSet):
         piece = Piece.objects.get(pk=pk)
         piece.likes.remove(user)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-    
+
     @action(methods=['post'], detail=True)
     def favorite(self, request, pk):
         """Post request for a user to sign up for an event"""
