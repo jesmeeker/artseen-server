@@ -10,3 +10,4 @@ from .subtype import SubType
 from .gallery import Gallery
 from .manager import Manager
 from .viewer import Viewer
+from .artistfollows import ArtistFollows
