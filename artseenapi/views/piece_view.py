@@ -24,18 +24,19 @@ class PieceView(ViewSet):
             Response -- JSON serialized events
         """
         artist = Artist.objects.get(user=request.auth.user)
-        user = User.objects.get(id=request.auth.user_id)
-        likes = PieceLikes.objects.all()
-        likes = likes.filter(user=request.auth.user)
+        likes = PieceLikes.objects.filter(Q(user=request.auth.user) & Q(piece_id=pk))
+        favorites = PieceFavorites.objects.filter(Q(user=request.auth.user) & Q(piece_id=pk))
 
         try:
             piece = Piece.objects.get(pk=pk)
             if piece.artist == artist:
                 piece.creator = True
 
-            likes = likes.filter(Q(user=user))
             if likes:
                 piece.user_likes = True
+
+            if favorites:
+                piece.user_favorite = True
 
         except Piece.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
