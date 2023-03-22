@@ -24,6 +24,7 @@ class Piece(models.Model):
     private = models.BooleanField(default=False)
     date_added = models.DateField(null=True, blank=True, auto_now=False, auto_now_add=True)
     likes = models.ManyToManyField(User, through="piecelikes", related_name='likes_of_piece')
+    favorites = models.ManyToManyField(User, through="piecefavorites", related_name="favorites_of_piece")
 
     @property
     def creator(self):
@@ -40,3 +41,11 @@ class Piece(models.Model):
     @user_likes.setter
     def user_likes(self, value):
         self.__user_likes = value
+
+    @property
+    def user_favorite(self):
+        return self.__user_favorite
+
+    @user_favorite.setter
+    def user_favorite(self, value):
+        self.__user_favorite = value

@@ -1,6 +1,6 @@
 [
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 1,
         "fields": {
             "user": 1,
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 2,
         "fields": {
             "user": 2,
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 4,
         "fields": {
             "user": 2,
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 5,
         "fields": {
             "user": 1,
@@ -32,7 +32,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 8,
         "fields": {
             "user": 2,
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 9,
         "fields": {
             "user": 1,
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 10,
         "fields": {
             "user": 2,
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 11,
         "fields": {
             "user": 2,
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 13,
         "fields": {
             "user": 1,
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 14,
         "fields": {
             "user": 2,
@@ -80,7 +80,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 15,
         "fields": {
             "user": 2,
@@ -88,7 +88,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 17,
         "fields": {
             "user": 1,
@@ -96,7 +96,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 18,
         "fields": {
             "user": 2,
@@ -104,7 +104,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 19,
         "fields": {
             "user": 2,
@@ -112,7 +112,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 21,
         "fields": {
             "user": 1,
@@ -120,7 +120,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 22,
         "fields": {
             "user": 2,
@@ -128,7 +128,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 23,
         "fields": {
             "user": 2,
@@ -136,7 +136,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 25,
         "fields": {
             "user": 1,
@@ -144,7 +144,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 26,
         "fields": {
             "user": 2,
@@ -152,7 +152,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 27,
         "fields": {
             "user": 2,
@@ -160,7 +160,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 28,
         "fields": {
             "user": 2,
@@ -168,7 +168,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 29,
         "fields": {
             "user": 11,
@@ -176,7 +176,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 30,
         "fields": {
             "user": 6,
@@ -184,7 +184,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 31,
         "fields": {
             "user": 9,
@@ -192,7 +192,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 32,
         "fields": {
             "user": 10,
@@ -200,7 +200,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 33,
         "fields": {
             "user": 1,
@@ -208,7 +208,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 34,
         "fields": {
             "user": 7,
@@ -216,7 +216,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 35,
         "fields": {
             "user": 7,
@@ -224,7 +224,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 36,
         "fields": {
             "user": 8,
@@ -232,7 +232,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 37,
         "fields": {
             "user": 3,
@@ -240,7 +240,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 38,
         "fields": {
             "user": 7,
@@ -248,7 +248,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 39,
         "fields": {
             "user": 1,
@@ -256,7 +256,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 40,
         "fields": {
             "user": 9,
@@ -264,7 +264,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 41,
         "fields": {
             "user": 9,
@@ -272,7 +272,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 42,
         "fields": {
             "user": 10,
@@ -280,7 +280,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 42,
         "fields": {
             "user": 11,
@@ -288,7 +288,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 43,
         "fields": {
             "user": 2,
@@ -296,7 +296,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 44,
         "fields": {
             "user": 8,
@@ -304,7 +304,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 45,
         "fields": {
             "user": 7,
@@ -312,7 +312,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 46,
         "fields": {
             "user": 9,
@@ -320,7 +320,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 47,
         "fields": {
             "user": 10,
@@ -328,7 +328,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 48,
         "fields": {
             "user": 6,
@@ -336,7 +336,7 @@
         }
     },
     {
-        "model": "artseenapi.piecelikes",
+        "model": "artseenapi.piecefavorites",
         "pk": 49,
         "fields": {
             "user": 9,
