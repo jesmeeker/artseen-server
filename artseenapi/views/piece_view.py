@@ -74,7 +74,7 @@ class PieceView(ViewSet):
         pieces = Piece.objects.annotate(
             likes_count=Count('likes')
         )
-        
+
         for piece in pieces:
             if artist is not None:
                 if piece.artist == artist:
@@ -84,8 +84,7 @@ class PieceView(ViewSet):
                 likes = PieceLikes.objects.filter(Q(user_id=request.auth.user) & Q(piece=piece))
                 if likes:
                     piece.user_likes = True
-                else:
-                    piece.user_likes = False
+                
 
 
         serializer = PieceSerializer(pieces, many=True)
