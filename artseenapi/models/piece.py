@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Piece(models.Model):
     artist = models.ForeignKey("Artist", on_delete=models.CASCADE)
@@ -22,6 +23,7 @@ class Piece(models.Model):
     price = models.FloatField(null=True)
     private = models.BooleanField(default=False)
     date_added = models.DateField(null=True, blank=True, auto_now=False, auto_now_add=True)
+    likes = models.ManyToManyField(User, through="piecelikes", related_name='likes_of_piece')
 
     @property
     def creator(self):
