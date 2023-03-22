@@ -18,3 +18,4 @@ python3 manage.py loaddata surfaces
 python3 manage.py loaddata artists
 python3 manage.py loaddata pieces
 python3 manage.py loaddata piecesubtypes
+python3 manage.py loaddata artistfollows
