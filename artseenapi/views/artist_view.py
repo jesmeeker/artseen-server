@@ -52,6 +52,9 @@ class ArtistView(ViewSet):
         if "user" in request.query_params:
             artists = artists.filter(user=request.auth.user)
 
+        if "followed" in request.query_params:
+            artists = artists.filter(followers__in=User.objects.filter(Q(artists_followers__user=request.auth.user)))
+
         for artist in artists:
             followers = ArtistFollows.objects.filter(Q(user_id=request.auth.user) & Q(artist=artist))
             if followers:
