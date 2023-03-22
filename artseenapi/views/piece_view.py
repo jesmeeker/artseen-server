@@ -5,8 +5,8 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
-from django.db.models import Count
-from artseenapi.models import Piece, PieceSubType, Artist, ArtType, SubType, Media, Surface
+from django.db.models import Count, Q
+from artseenapi.models import Piece, PieceLikes, PieceSubType, Artist, ArtType, SubType, Media, Surface
 
 
 class PieceView(ViewSet):
@@ -24,11 +24,18 @@ class PieceView(ViewSet):
             Response -- JSON serialized events
         """
         artist = Artist.objects.get(user=request.auth.user)
+        user = User.objects.get(id=request.auth.user_id)
+        likes = PieceLikes.objects.all()
+        likes = likes.filter(user=request.auth.user)  
 
         try:
             piece = Piece.objects.get(pk=pk)
             if piece.artist == artist:
                 piece.creator = True
+        
+            likes = likes.filter(Q(user=user))
+            if likes:
+                piece.user_likes = True
 
         except Piece.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
@@ -44,11 +51,15 @@ class PieceView(ViewSet):
         """
         pieces = []
         
-
         try:
             artist = Artist.objects.get(user=request.auth.user)
         except Artist.DoesNotExist:
             artist = None
+
+        try:
+            user = User.objects.get(id=request.auth.user_id)
+        except User.DoesNotExist:
+            user = None
 
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
@@ -60,14 +71,22 @@ class PieceView(ViewSet):
         else:
             pieces = Piece.objects.all()
 
+        pieces = Piece.objects.annotate(
+            likes_count=Count('likes')
+        )
+        
         for piece in pieces:
             if artist is not None:
                 if piece.artist == artist:
                     piece.creator = True
 
-        pieces = Piece.objects.annotate(
-            likes_count=Count('likes')
-        )
+            if user is not None:
+                likes = PieceLikes.objects.filter(Q(user_id=request.auth.user) & Q(piece=piece))
+                if likes:
+                    piece.user_likes = True
+                else:
+                    piece.user_likes = False
+
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -264,4 +283,4 @@ class PieceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count', 'user_likes')

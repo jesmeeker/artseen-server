@@ -32,3 +32,11 @@ class Piece(models.Model):
     @creator.setter
     def creator(self, value):
         self.__creator = value
+
+    @property
+    def user_likes(self):
+        return self.__user_likes
+
+    @user_likes.setter
+    def user_likes(self, value):
+        self.__user_likes = value
