@@ -3,6 +3,9 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
+from rest_framework.decorators import action
+from django.contrib.auth.models import User
+from django.db.models import Count
 from artseenapi.models import Piece, PieceSubType, Artist, ArtType, SubType, Media, Surface
 
 
@@ -40,6 +43,8 @@ class PieceView(ViewSet):
             Response -- JSON serialized list of pieces
         """
         pieces = []
+        
+
         try:
             artist = Artist.objects.get(user=request.auth.user)
         except Artist.DoesNotExist:
@@ -59,6 +64,10 @@ class PieceView(ViewSet):
             if artist is not None:
                 if piece.artist == artist:
                     piece.creator = True
+
+        pieces = Piece.objects.annotate(
+            likes_count=Count('likes')
+        )
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -186,7 +195,23 @@ class PieceView(ViewSet):
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+    @action(methods=['post'], detail=True)
+    def like(self, request, pk):
+        """Post request for a user to sign up for an event"""
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.likes.add(user)
+        return Response({'message': 'User added'}, status=status.HTTP_201_CREATED)
 
+    @action(methods=['delete'], detail=True)
+    def unlike(self, request, pk):
+        """Post request for a user to sign up for an event"""
+    
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.likes.remove(user)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
 class PieceSubTypeSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions
     """
@@ -235,7 +260,8 @@ class PieceSerializer(serializers.ModelSerializer):
     arttype = PieceArtTypeSerializer()
     media = PieceMediaSerializer()
     surface = PieceSurfaceSerializer()
+    likes_count = serializers.IntegerField(default=None)
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count')
