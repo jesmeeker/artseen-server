@@ -47,6 +47,10 @@ class PieceView(ViewSet):
 
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
+        
+        if "artist" in request.query_params:
+            artistId = request.query_params['artist']
+            pieces = Piece.objects.filter(artist_id=artistId)
 
         else:
             pieces = Piece.objects.all()
