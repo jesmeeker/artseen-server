@@ -12,3 +12,4 @@ from .manager import Manager
 from .viewer import Viewer
 from .artistfollows import ArtistFollows
 from .piecelikes import PieceLikes
+from .piecefavorites import PieceFavorites
