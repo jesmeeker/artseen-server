@@ -233,6 +233,23 @@ class PieceView(ViewSet):
         piece = Piece.objects.get(pk=pk)
         piece.likes.remove(user)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    
+    @action(methods=['post'], detail=True)
+    def favorite(self, request, pk):
+        """Post request for a user to sign up for an event"""
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.favorites.add(user)
+        return Response({'message': 'User added'}, status=status.HTTP_201_CREATED)
+
+    @action(methods=['delete'], detail=True)
+    def unfavorite(self, request, pk):
+        """Post request for a user to sign up for an event"""
+
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.favorites.remove(user)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
 
 class PieceSubTypeSerializer(serializers.ModelSerializer):
