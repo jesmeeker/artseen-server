@@ -6,7 +6,7 @@ from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
 from django.db.models import Count, Q
-from artseenapi.models import Piece, PieceLikes, PieceSubType, Artist, ArtType, SubType, Media, Surface
+from artseenapi.models import Piece, PieceLikes, PieceSubType, Artist, ArtType, SubType, Media, Surface, PieceFavorites
 
 
 class PieceView(ViewSet):
@@ -24,18 +24,22 @@ class PieceView(ViewSet):
             Response -- JSON serialized events
         """
         artist = Artist.objects.get(user=request.auth.user)
-        user = User.objects.get(id=request.auth.user_id)
-        likes = PieceLikes.objects.all()
-        likes = likes.filter(user=request.auth.user)  
+        likes = PieceLikes.objects.filter(
+            Q(user=request.auth.user) & Q(piece_id=pk))
+        favorites = PieceFavorites.objects.filter(
+            Q(user=request.auth.user) & Q(piece_id=pk))
 
         try:
-            piece = Piece.objects.get(pk=pk)
+            piece = Piece.objects.annotate(
+                likes_count=Count('likes')).get(pk=pk)
             if piece.artist == artist:
                 piece.creator = True
-        
-            likes = likes.filter(Q(user=user))
+
             if likes:
                 piece.user_likes = True
+
+            if favorites:
+                piece.user_favorite = True
 
         except Piece.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
@@ -50,7 +54,7 @@ class PieceView(ViewSet):
             Response -- JSON serialized list of pieces
         """
         pieces = []
-        
+
         try:
             artist = Artist.objects.get(user=request.auth.user)
         except Artist.DoesNotExist:
@@ -63,7 +67,7 @@ class PieceView(ViewSet):
 
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
-        
+
         if "artist" in request.query_params:
             artistId = request.query_params['artist']
             pieces = Piece.objects.filter(artist_id=artistId)
@@ -81,11 +85,14 @@ class PieceView(ViewSet):
                     piece.creator = True
 
             if user is not None:
-                likes = PieceLikes.objects.filter(Q(user_id=request.auth.user) & Q(piece=piece))
+                likes = PieceLikes.objects.filter(
+                    Q(user_id=request.auth.user) & Q(piece=piece))
                 if likes:
                     piece.user_likes = True
-                
-
+                favorites = PieceFavorites.objects.filter(
+                    (Q(user_id=request.auth.user_id) & Q(piece=piece)))
+                if favorites:
+                    piece.user_favorite = True
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -138,7 +145,7 @@ class PieceView(ViewSet):
                 piece.save()
             except Surface.DoesNotExist:
                 return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-            
+
         else:
             pass
 
@@ -193,7 +200,7 @@ class PieceView(ViewSet):
                 piece_to_update.surface = surface
             except Surface.DoesNotExist:
                 return Response({'message': 'You sent an invalid surface Id'}, status=status.HTTP_404_NOT_FOUND)
-            
+
         else:
             pass
 
@@ -224,12 +231,30 @@ class PieceView(ViewSet):
     @action(methods=['delete'], detail=True)
     def unlike(self, request, pk):
         """Post request for a user to sign up for an event"""
-    
+
         user = User.objects.get(id=request.auth.user_id)
         piece = Piece.objects.get(pk=pk)
         piece.likes.remove(user)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
-    
+
+    @action(methods=['post'], detail=True)
+    def favorite(self, request, pk):
+        """Post request for a user to sign up for an event"""
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.favorites.add(user)
+        return Response({'message': 'User added'}, status=status.HTTP_201_CREATED)
+
+    @action(methods=['delete'], detail=True)
+    def unfavorite(self, request, pk):
+        """Post request for a user to sign up for an event"""
+
+        user = User.objects.get(id=request.auth.user_id)
+        piece = Piece.objects.get(pk=pk)
+        piece.favorites.remove(user)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+
 class PieceSubTypeSerializer(serializers.ModelSerializer):
     """JSON serializer for reactions
     """
@@ -282,4 +307,5 @@ class PieceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Piece
-        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase', 'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count', 'user_likes')
+        fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase',
+                  'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count', 'user_likes', 'user_favorite')

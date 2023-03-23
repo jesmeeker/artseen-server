@@ -20,3 +20,4 @@ python3 manage.py loaddata pieces
 python3 manage.py loaddata piecesubtypes
 python3 manage.py loaddata artistfollows
 python3 manage.py loaddata piecelikes
+python3 manage.py loaddata piecefavorites
