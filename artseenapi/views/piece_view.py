@@ -65,19 +65,22 @@ class PieceView(ViewSet):
         except User.DoesNotExist:
             user = None
 
+        pieces = Piece.objects.annotate(
+            likes_count=Count('likes')
+        )
+
         if "user" in request.query_params:
             pieces = Piece.objects.filter(artist_id=artist)
+        
+        elif "favorites" in request.query_params:
+            pieces = Piece.objects.filter(id__in=Piece.objects.filter(favorites=request.auth.user))
 
-        if "artist" in request.query_params:
+        elif "artist" in request.query_params:
             artistId = request.query_params['artist']
             pieces = Piece.objects.filter(artist_id=artistId)
 
         else:
             pieces = Piece.objects.all()
-
-        pieces = Piece.objects.annotate(
-            likes_count=Count('likes')
-        )
 
         for piece in pieces:
             if artist is not None:
