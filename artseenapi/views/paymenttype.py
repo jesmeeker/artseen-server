@@ -19,7 +19,7 @@ class PaymentSerializer(serializers.HyperlinkedModelSerializer):
                   'expiration_date', 'create_date')
 
 
-class Payments(ViewSet):
+class PaymentTypesView(ViewSet):
 
     def create(self, request):
         """Handle POST operations

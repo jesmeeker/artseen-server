@@ -30,20 +30,25 @@ class Profile(ViewSet):
         return Response(serializer.data)
 
     @action(methods=['get', 'post', 'delete'], detail=False)
-    def cart(self, request):
+    def cart(self, request, pk=None):
         """Shopping cart manipulation"""
 
         current_user = Viewer.objects.get(user=request.auth.user)
 
         if request.method == "DELETE":
-            try:
-                open_order = Order.objects.get(
-                    viewer=current_user, payment_type=None)
-                line_items = OrderPiece.objects.filter(order=open_order)
-                line_items.delete()
-                open_order.delete()
-            except Order.DoesNotExist as ex:
-                return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+            if pk is not None:
+                line_item = OrderPiece.objects.get(piece_id=pk)
+                line_item.delete()
+
+            else:
+                try:
+                    open_order = Order.objects.get(
+                        viewer=current_user, payment_type=None)
+                    line_items = OrderPiece.objects.filter(order=open_order)
+                    line_items.delete()
+                    open_order.delete()
+                except Order.DoesNotExist as ex:
+                    return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
             return Response({}, status=status.HTTP_204_NO_CONTENT)
 

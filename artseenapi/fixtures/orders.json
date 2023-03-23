@@ -54,15 +54,6 @@
         }
     },
     {
-        "pk": 7,
-        "model": "artseenapi.order",
-        "fields": {
-            "viewer_id": 2,
-            "created_date": "2019-05-27",
-            "payment_type_id": null
-        }
-    },
-    {
         "pk": 8,
         "model": "artseenapi.order",
         "fields": {

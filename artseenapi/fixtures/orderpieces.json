@@ -59,7 +59,7 @@
         "model": "artseenapi.orderpiece",
         "pk": 8,
         "fields": {
-            "order_id": 7,
+            "order_id": 3,
             "piece_id": 11
         }
     },
