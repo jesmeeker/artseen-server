@@ -21,3 +21,6 @@ python3 manage.py loaddata piecesubtypes
 python3 manage.py loaddata artistfollows
 python3 manage.py loaddata piecelikes
 python3 manage.py loaddata piecefavorites
+python3 manage.py loaddata payments
+python3 manage.py loaddata orders
+python3 manage.py loaddata orderpieces

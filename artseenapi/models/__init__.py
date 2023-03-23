@@ -13,3 +13,6 @@ from .viewer import Viewer
 from .artistfollows import ArtistFollows
 from .piecelikes import PieceLikes
 from .piecefavorites import PieceFavorites
+from .payment import Payment
+from .order import Order
+from .orderpiece import OrderPiece

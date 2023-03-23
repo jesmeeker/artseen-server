@@ -166,5 +166,33 @@
             "date_joined": "2021-06-28T14:51:39.989Z",
             "is_active": true
         }
+    },
+    {
+        "model": "auth.user",
+        "pk": 13,
+        "fields": {
+            "first_name": "Matt",
+            "last_name": "Hedges",
+            "email": "mattay@email.com",
+            "username": "mhedges",
+            "is_staff": false,
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "date_joined": "2021-06-28T14:51:39.989Z",
+            "is_active": true
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 14,
+        "fields": {
+            "first_name": "Ricky",
+            "last_name": "Canepa",
+            "email": "ricky@email.com",
+            "username": "ricky",
+            "is_staff": false,
+            "password": "pbkdf2_sha256$216000$qMRH8szID7Z8$Vljya2V3XfruOHuvx1hGz9ZyKg4bxbw7rc2WO0gTR7I=",
+            "date_joined": "2021-06-28T14:51:39.989Z",
+            "is_active": true
+        }
     }
 ]
