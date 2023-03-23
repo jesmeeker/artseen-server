@@ -7,3 +7,5 @@ from .media_view import MediaView
 from .artist_view import ArtistView
 from .surface_view import SurfaceView
 from .gallery_view import GalleryView
+from .manager_view import ManagerView
+from .viewer_view import ViewerView
