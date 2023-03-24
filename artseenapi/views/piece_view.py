@@ -6,7 +6,7 @@ from rest_framework import serializers, status
 from rest_framework.decorators import action
 from django.contrib.auth.models import User
 from django.db.models import Count, Q
-from artseenapi.models import Piece, PieceLikes, PieceSubType, Artist, ArtType, SubType, Media, Surface, PieceFavorites
+from artseenapi.models import Piece, PieceLikes, PieceSubType, Viewer, OrderPiece, Order, Artist, ArtType, SubType, Media, Surface, PieceFavorites
 
 
 class PieceView(ViewSet):
@@ -23,11 +23,11 @@ class PieceView(ViewSet):
         Returns:
             Response -- JSON serialized events
         """
-        try: 
+        try:
             artist = Artist.objects.get(user=request.auth.user)
         except Artist.DoesNotExist:
             artist = None
-            
+
         likes = PieceLikes.objects.filter(
             Q(user=request.auth.user) & Q(piece_id=pk))
         favorites = PieceFavorites.objects.filter(
@@ -65,26 +65,36 @@ class PieceView(ViewSet):
             artist = None
 
         try:
+            viewer = Viewer.objects.get(user=request.auth.user)
+        except Viewer.DoesNotExist:
+            viewer = None
+
+        try:
             user = User.objects.get(id=request.auth.user_id)
         except User.DoesNotExist:
             user = None
 
-        pieces = Piece.objects.annotate(
-            likes_count=Count('likes')
-        )
-
         if "user" in request.query_params:
-            pieces = Piece.objects.filter(artist_id=artist)
-        
+            pieces = Piece.objects.annotate(
+                likes_count=Count('likes')
+            ).filter(artist_id=artist)
+
         elif "favorites" in request.query_params:
-            pieces = Piece.objects.filter(id__in=Piece.objects.filter(favorites=request.auth.user))
+            pieces = Piece.objects.annotate(
+                likes_count=Count('likes')
+            ).filter(
+                id__in=Piece.objects.filter(favorites=request.auth.user))
 
         elif "artist" in request.query_params:
             artistId = request.query_params['artist']
-            pieces = Piece.objects.filter(artist_id=artistId)
+            pieces = Piece.objects.annotate(
+                likes_count=Count('likes')
+            ).filter(artist_id=artistId)
 
         else:
-            pieces = Piece.objects.all()
+            pieces = Piece.objects.annotate(
+                likes_count=Count('likes')
+            ).all()
 
         for piece in pieces:
             if artist is not None:
@@ -94,12 +104,19 @@ class PieceView(ViewSet):
             if user is not None:
                 likes = PieceLikes.objects.filter(
                     Q(user_id=request.auth.user) & Q(piece=piece))
+                
                 if likes:
                     piece.user_likes = True
                 favorites = PieceFavorites.objects.filter(
                     (Q(user_id=request.auth.user_id) & Q(piece=piece)))
                 if favorites:
                     piece.user_favorite = True
+            
+            if viewer is not None:
+                orders = Order.objects.filter(Q(viewer=viewer) & Q(payment_type__isnull=True) & Q(lineitems__piece=piece))
+
+                if orders:
+                    piece.in_cart = True
 
         serializer = PieceSerializer(pieces, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -141,7 +158,7 @@ class PieceView(ViewSet):
             available_show=request.data['available_show'],
             will_ship=request.data['will_ship'],
             unique=request.data['unique'],
-            quantity_available=request.data['qty_available'],
+            qty_available=request.data['qty_available'],
             price=request.data['price']
         )
 
@@ -198,7 +215,7 @@ class PieceView(ViewSet):
         piece_to_update.available_show = request.data['available_show']
         piece_to_update.will_ship = request.data['will_ship']
         piece_to_update.unique = request.data['unique']
-        piece_to_update.quantity_available = request.data['quantity_available']
+        piece_to_update.qty_available = request.data['qty_available']
         piece_to_update.price = request.data['price']
 
         if request.data['surface'] is not None:
@@ -275,7 +292,7 @@ class PieceArtistSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Artist
-        fields = ('full_name',)
+        fields = ('id', 'full_name',)
 
 
 class PieceArtTypeSerializer(serializers.ModelSerializer):
@@ -315,4 +332,4 @@ class PieceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Piece
         fields = ('id', 'artist', 'title', 'subtitle', 'arttype', 'subtypes', 'media', 'surface', 'length', 'width', 'height', 'weight', 'image_url', 'about', 'available_purchase',
-                  'available_show', 'will_ship', 'unique', 'quantity_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count', 'user_likes', 'user_favorite')
+                  'available_show', 'will_ship', 'unique', 'qty_available', 'price', 'private', 'date_added', 'creator', 'likes', 'likes_count', 'user_likes', 'user_favorite', 'in_cart')

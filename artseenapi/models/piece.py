@@ -19,7 +19,7 @@ class Piece(models.Model):
     available_show = models.BooleanField(default=False)
     will_ship = models.BooleanField(default=False)
     unique = models.BooleanField(default=True)
-    quantity_available = models.IntegerField(null=True)
+    qty_available = models.IntegerField(null=True)
     price = models.FloatField(null=True)
     private = models.BooleanField(default=False)
     date_added = models.DateField(null=True, blank=True, auto_now=False, auto_now_add=True)
@@ -49,3 +49,11 @@ class Piece(models.Model):
     @user_favorite.setter
     def user_favorite(self, value):
         self.__user_favorite = value
+
+    @property
+    def in_cart(self):
+        return self.__in_cart
+
+    @in_cart.setter
+    def in_cart(self, value):
+        self.__in_cart = value

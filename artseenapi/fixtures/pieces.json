@@ -19,7 +19,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 200.00,
             "date_added": "2022-05-01"
         }
@@ -44,7 +44,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 300.00,
             "date_added": "2022-03-14"
         }
@@ -55,7 +55,7 @@
         "fields": {
             "artist": 2,
             "title": "The Sculpture",
-            "subtitle": null,
+            "subtitle": "so much space",
             "arttype": 3,
             "media": 3,
             "surface": 3,
@@ -69,7 +69,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 1000.00,
             "date_added": "2022-03-14"
         }
@@ -94,7 +94,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 350.00,
             "date_added": "2022-04-15"
         }
@@ -105,7 +105,7 @@
         "fields": {
             "artist": 3,
             "title": "The Solitude of Trees",
-            "subtitle": null,
+            "subtitle": "the dark",
             "arttype": 4,
             "media": 3,
             "surface": 3,
@@ -119,7 +119,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 150.00,
             "date_added": "2022-04-30"
         }
@@ -144,7 +144,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 250.00,
             "date_added": "2022-10-15"
         }
@@ -169,7 +169,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 500.00,
             "date_added": "2022-03-14"
         }
@@ -194,7 +194,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 500.0,
             "date_added": "2022-03-14"
         }
@@ -205,7 +205,7 @@
         "fields": {
             "artist": 7,
             "title": "Abstract Composition",
-            "subtitle": null,
+            "subtitle": "geometry",
             "arttype": 1,
             "media": 2,
             "surface": 2,
@@ -219,7 +219,7 @@
             "available_show": false,
             "will_ship": false,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 800.0,
             "date_added": "2022-03-12"
         }
@@ -244,7 +244,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 350.0,
             "date_added": "2022-03-10"
         }
@@ -255,7 +255,7 @@
         "fields": {
             "artist": 2,
             "title": "Abstract Sculpture",
-            "subtitle": null,
+            "subtitle": "Dynamic",
             "arttype": 3,
             "media": 4,
             "surface": null,
@@ -269,7 +269,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 350.0,
             "date_added": "2022-03-10"
         }
@@ -280,7 +280,7 @@
         "fields": {
             "artist": 9,
             "title": "The Moonlit Sea",
-            "subtitle": null,
+            "subtitle": "at night...",
             "arttype": 1,
             "media": 3,
             "surface": 5,
@@ -294,7 +294,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 800.0,
             "date_added": "2022-03-05"
         }
@@ -319,7 +319,7 @@
             "available_show": false,
             "will_ship": true,
             "unique": false,
-            "quantity_available": 5,
+            "qty_available": 5,
             "price": 250.0,
             "date_added": "2022-02-27"
         }
@@ -344,7 +344,7 @@
             "available_show": true,
             "will_ship": false,
             "unique": true,
-            "quantity_available": 0,
+            "qty_available": 0,
             "price": 1200.0,
             "date_added": "2022-03-08"
         }
@@ -369,7 +369,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 1200.0,
             "date_added": "2022-10-21"
         }
@@ -394,7 +394,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 2500.0,
             "date_added": "2022-10-21"
         }
@@ -419,7 +419,7 @@
             "available_show": true,
             "will_ship": false,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 350.00,
             "date_added": "2022-03-05"
         }
@@ -430,7 +430,7 @@
         "fields": {
             "artist": 7,
             "title": "Oil Painting",
-            "subtitle": null,
+            "subtitle": "Landscape",
             "arttype": 1,
             "media": 3,
             "surface": 3,
@@ -444,7 +444,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 1200.00,
             "date_added": "2022-03-06"
         }
@@ -469,7 +469,7 @@
             "available_show": false,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 250.00,
             "date_added": "2022-03-06"
         }
@@ -480,7 +480,7 @@
         "fields": {
             "artist": 4,
             "title": "The Blue Hour",
-            "subtitle": null,
+            "subtitle": "Moody",
             "arttype": 1,
             "media": 2,
             "surface": 2,
@@ -494,7 +494,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": false,
-            "quantity_available": 5,
+            "qty_available": 5,
             "price": 450.00,
             "date_added": "2022-03-13"
         }
@@ -519,7 +519,7 @@
             "available_show": true,
             "will_ship": false,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 4500.00,
             "date_added": "2022-03-14"
         }
@@ -530,7 +530,7 @@
         "fields": {
             "artist": 2,
             "title": "Self-Portrait",
-            "subtitle": null,
+            "subtitle": "face",
             "arttype": 2,
             "media": 3,
             "surface": 3,
@@ -544,7 +544,7 @@
             "available_show": false,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 800.00,
             "date_added": "2022-03-14"
         }
@@ -555,7 +555,7 @@
         "fields": {
             "artist": 2,
             "title": "Untitled Sculpture",
-            "subtitle": null,
+            "subtitle": "Bronze Absract",
             "arttype": 3,
             "media": 6,
             "surface": 2,
@@ -569,7 +569,7 @@
             "available_show": true,
             "will_ship": false,
             "unique": true,
-            "quantity_available": 0,
+            "qty_available": 0,
             "price": 0.00,
             "date_added": "2022-03-14"
         }
@@ -594,7 +594,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 1500.0,
             "date_added": "2022-03-13"
         }
@@ -619,7 +619,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": false,
-            "quantity_available": 5,
+            "qty_available": 5,
             "price": 200.0,
             "date_added": "2022-08-25"
         }
@@ -644,7 +644,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": false,
-            "quantity_available": 10,
+            "qty_available": 10,
             "price": 350.0,
             "date_added": "2022-03-14"
         }
@@ -669,7 +669,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": 1,
+            "qty_available": 1,
             "price": 500.00,
             "date_added": "2021-10-15"
         }
@@ -694,7 +694,7 @@
             "available_show": true,
             "will_ship": true,
             "unique": true,
-            "quantity_available": null,
+            "qty_available": null,
             "price": null,
             "date_added": "2021-10-15"
         }
