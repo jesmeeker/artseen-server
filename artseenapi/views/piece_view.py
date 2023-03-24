@@ -23,7 +23,11 @@ class PieceView(ViewSet):
         Returns:
             Response -- JSON serialized events
         """
-        artist = Artist.objects.get(user=request.auth.user)
+        try: 
+            artist = Artist.objects.get(user=request.auth.user)
+        except Artist.DoesNotExist:
+            artist = None
+            
         likes = PieceLikes.objects.filter(
             Q(user=request.auth.user) & Q(piece_id=pk))
         favorites = PieceFavorites.objects.filter(

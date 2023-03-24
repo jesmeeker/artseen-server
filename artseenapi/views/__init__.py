@@ -9,3 +9,7 @@ from .surface_view import SurfaceView
 from .gallery_view import GalleryView
 from .manager_view import ManagerView
 from .viewer_view import ViewerView
+from .cart_view import CartView
+from .order_view import OrderView
+from .paymenttype import PaymentTypesView
+from .profile_view import Profile

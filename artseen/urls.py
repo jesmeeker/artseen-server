@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from artseenapi.views import login_user, register_user, ViewerView, CityView, ManagerView, GalleryView, SurfaceView, MediaView, PieceView, ArtTypeView, SubTypeView, ArtistView
+from artseenapi.views import login_user, register_user, Profile, PaymentTypesView, OrderView, ViewerView, CityView, CartView, ManagerView, GalleryView, SurfaceView, MediaView, PieceView, ArtTypeView, SubTypeView, ArtistView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'cities', CityView, 'city')
@@ -30,6 +30,10 @@ router.register(r'art', PieceView, 'piece')
 router.register(r'artist', ArtistView, 'artist')
 router.register(r'manager', ManagerView, 'manager')
 router.register(r'viewer', ViewerView, 'viewer')
+router.register(r'orders', OrderView, 'order')
+router.register(r'cart', CartView, 'cart')
+router.register(r'paymenttypes', PaymentTypesView, 'payment')
+router.register(r'profile', Profile, 'profile')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -7,5 +7,23 @@
             "phone_number": 6152221313,
             "city": 2
         }
+    },
+    {
+        "model": "artseenapi.viewer",
+        "pk": 2,
+        "fields": {
+            "user": 13,
+            "phone_number": 6152221313,
+            "city": 2
+        }
+    },
+    {
+        "model": "artseenapi.viewer",
+        "pk": 3,
+        "fields": {
+            "user": 14,
+            "phone_number": 6152225555,
+            "city": 2
+        }
     }
 ]
