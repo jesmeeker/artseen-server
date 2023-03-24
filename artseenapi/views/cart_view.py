@@ -6,6 +6,8 @@ from rest_framework import status
 from artseenapi.models import Order, Viewer, Piece, OrderPiece
 from .piece_view import PieceSerializer
 from .order_view import OrderSerializer
+from django.db.models import Sum
+
 
 class CartView(ViewSet):
     """Shopping cart for ArtSeen eCommerce"""
@@ -95,6 +97,7 @@ class CartView(ViewSet):
             }
             final["order"]["pieces"] = piece_list.data
             final["order"]["size"] = len(pieces_on_order)
+            final["order"]["total"] = pieces_on_order.aggregate(Sum('price'))
 
         except Order.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
