@@ -31,7 +31,7 @@ class PaymentTypesView(ViewSet):
         new_payment.merchant_name = request.data["merchant_name"]
         new_payment.account_number = request.data["account_number"]
         new_payment.expiration_date = request.data["expiration_date"]
-        new_payment.create_date = request.data["create_date"]
+        new_payment.zip_code = request.data["zip_code"]
         viewer = Viewer.objects.get(user=request.auth.user)
         new_payment.viewer = viewer
         new_payment.save()
@@ -81,7 +81,11 @@ class PaymentTypesView(ViewSet):
         if viewer is not None:
             payment_types = payment_types.filter(viewer=viewer)
 
+
             if len(payment_types) >= 1:
+                for payment in payment_types:
+                    last_four = str(int(payment.account_number))[-4:]
+                    payment.account_number = last_four
 
                 serializer = PaymentSerializer(
                 payment_types, many=True, context={'request': request})
