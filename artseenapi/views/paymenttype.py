@@ -49,6 +49,8 @@ class PaymentTypesView(ViewSet):
         """
         try:
             payment_type = Payment.objects.get(pk=pk)
+            last_four = str(int(payment_type.account_number))[-4:]
+            payment_type.account_number = last_four
             serializer = PaymentSerializer(
                 payment_type, context={'request': request})
             return Response(serializer.data, status=status.HTTP_200_OK)

@@ -3,7 +3,7 @@ import datetime
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from artseenapi.models import Order, Viewer, Piece, OrderPiece
+from artseenapi.models import Order, Viewer, Piece, OrderPiece, Payment
 from .piece_view import PieceSerializer
 from .order_view import OrderSerializer
 from django.db.models import Sum
